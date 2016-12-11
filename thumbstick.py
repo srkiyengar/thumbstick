@@ -69,8 +69,25 @@ class Thumbstick():
                     else:
                         response.append(this_byte)
 
-            y = int("".join(response))
-            return y
+            value = int("".join(response))
+            # The thumb stick 0-1023 in X and Y axis
+            # The rest position is 515, 510
+            if cmd == 0:
+                if value >= 0:
+                    return value/508.0
+                else:
+                    return value/515.0
+            elif cmd == 1:
+                if value >=0:
+                    return value/522.0
+                else:
+                    return value/501.0
+            elif cmd == 255:
+                return value
+
+
+
+
 
 
 

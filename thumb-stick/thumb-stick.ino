@@ -1,10 +1,8 @@
-// Arduino Micro code
-
-
 int zeroX = 515;
 int zeroY = 501;
 
-
+//int zeroX = 0;
+//int zeroY = 0;
 
 
 void setup() {
